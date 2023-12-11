@@ -20,5 +20,5 @@ Since the target issue occurs when the view dot normal is specifically close to 
 
 Rendering Outlines as a pre-pass to the Unity render opaque geometry pass:
 
-Rendering the outline layer as a prepass allows for other geometry to be easily rendered on top of outlines without requiring depth information. 
+Rendering the outline layer as a prepass allows for other geometry to be easily rendered on top of outlines without requiring depth information. Then the outline layer is not rendered in the opaque geometry pass.
 ![image](https://github.com/EmmyVoita/Unity-URP-ScreenSpaceOutlines/assets/82542924/279cb0cf-9f90-4920-a022-9886b0ac931f)
