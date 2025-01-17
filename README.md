@@ -3,14 +3,19 @@ This project is an enhancement of Robin Seibold's screen space outlines implemen
 
 **Non-maximum supression (NSM) to resolve very steep (view-normal) angle transitions:**
 
-Here is an example of the artifact when there is no NMS applied (left), and the issue resolved with NMS applied (right).
+NMS is applied as an optional step after calculating edge detection, which can be enabled or disabled using the "Use NMS" bool in the renderer feature settings.
+
+Here is an example of the artifact when there is no NMS applied (left), and the issue resolved with NMS applied (right). My NMS implementation is not perfect. It can decrease the sharpness of outlines, which is also clear in the following image. I plan on reworking this at some point in the future when I have better knowledge of how to solve the problem. 
 
 ![NMS_1](https://github.com/user-attachments/assets/09fd89b1-6e21-420b-8960-80e9d45cd1cd)
 
+**Temporal Anti-Aliasing** 
+
+This project implements playdeadgames temporal reprojection solution in URP. It is an optional anti-aliasing pass after applying screen space outines that applies TAA to the entire image, since Unity's built-in anti-aliasing functions don't apply to the additional injected passes.
 
 If you are interested you can read more about the project here:
-
 
 **Links**
 - https://www.youtube.com/watch?v=LMqio9NsqmM&ab_channel=RobinSeibold
 - https://github.com/Robinseibold/Unity-URP-Outlines
+- https://gdcvault.com/play/1022970/Temporal-Reprojection-Anti-Aliasing-in
