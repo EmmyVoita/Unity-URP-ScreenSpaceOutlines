@@ -22,3 +22,4 @@ If you are interested you can read more about the project here:
 - https://www.youtube.com/watch?v=LMqio9NsqmM&ab_channel=RobinSeibold
 - https://github.com/Robinseibold/Unity-URP-Outlines
 - https://gdcvault.com/play/1022970/Temporal-Reprojection-Anti-Aliasing-in
+- https://github.com/playdeadgames/temporal
