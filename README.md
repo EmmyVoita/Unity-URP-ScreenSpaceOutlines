@@ -1,28 +1,16 @@
 # ScreenSpaceOutlines
-This project is an enhancement of Robin Seibold's screen space outlines implementation, tailored to meet the specific requirements of a digital prototype.
-
-**References**
-- https://www.youtube.com/watch?v=LMqio9NsqmM&ab_channel=RobinSeibold
-- https://github.com/Robinseibold/Unity-URP-Outlines
-
-**Modifications:**
+This project is an enhancement of Robin Seibold's screen space outlines implementation, which I expanded upon to meet the requirements of various projects I was working on. These enhancements included improving edge detection using non-maximum suppression and adding anti-aliasing. I initially worked on this project using Unity version 2022.3.50f1, but I encountered issues with setting multiple render targets, which I needed for implementing a Temporal Anti-Aliasing (TAA) shader. To diagnose bugs, I relied heavily on RenderDoc and eventually decided to switch to Unity 6.0 to use the Render Graph system.
 
 **Non-maximum supression (NSM) to resolve very steep (view-normal) angle transitions:**
 
-Here is an example of the artifact when there is no NSM. The slider is in the bottom left.
+Here is an example of the artifact when there is no NMS applied (left), and the issue resolved with NMS applied (right).
 
-![image](https://github.com/EmmyVoita/Unity-URP-ScreenSpaceOutlines/assets/82542924/1e73f135-3122-498a-afeb-43824f298d85)
+![NMS_2](https://github.com/user-attachments/assets/10bb227c-1c0c-45cf-90c0-2def5f8e1f25)
 
-Here is an example of the of just the NSM output. Circled in blue, artifacts occur do to the offset when dealing with fine details. 
 
-![image](https://github.com/EmmyVoita/Unity-URP-ScreenSpaceOutlines/assets/82542924/89dd48c3-e697-435d-8507-7bda0dc2b7e7)
+If you are interested you can read more about the project here:
 
-Since the target issue occurs when the view dot normal is specifically close to 0, the NSM output is blended with the base output based on the dot product and the slider variable to allow for more control. This approach reduces artifacts around fine details, such as those on the sword, although there is still room for improvement. These screenshots were taken with 2x MSAA.
 
-![image](https://github.com/EmmyVoita/Unity-URP-ScreenSpaceOutlines/assets/82542924/dbbfaa97-869b-46f9-8f10-09774f83b3fa)
-
-**Rendering Outlines as a pre-pass to the Unity render opaque geometry pass:**
-
-Rendering the outline layer as a pre-pass allows other geometry to be easily rendered on top of outlines without requiring depth information. The outline layer is then excluded from the opaque geometry pass.
-
-![image](https://github.com/EmmyVoita/Unity-URP-ScreenSpaceOutlines/assets/82542924/279cb0cf-9f90-4920-a022-9886b0ac931f)
+**Links**
+- https://www.youtube.com/watch?v=LMqio9NsqmM&ab_channel=RobinSeibold
+- https://github.com/Robinseibold/Unity-URP-Outlines
