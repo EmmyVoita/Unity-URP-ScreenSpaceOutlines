@@ -14,6 +14,7 @@ Here is an example of the artifact when there is no NMS applied (left), and the 
 This project implements playdeadgames temporal reprojection solution in URP. It is an optional anti-aliasing pass after applying screen space outines that applies TAA to the entire image, since Unity's built-in anti-aliasing functions don't apply to the additional injected passes.
 
 If you are interested you can read more about the project here:
+[come back and insert link]
 
 **Links**
 - https://www.youtube.com/watch?v=LMqio9NsqmM&ab_channel=RobinSeibold
