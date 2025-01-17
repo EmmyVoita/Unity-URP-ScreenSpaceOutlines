@@ -5,7 +5,7 @@ This project is an enhancement of Robin Seibold's screen space outlines implemen
 
 Here is an example of the artifact when there is no NMS applied (left), and the issue resolved with NMS applied (right).
 
-![NMS_2](https://github.com/user-attachments/assets/10bb227c-1c0c-45cf-90c0-2def5f8e1f25)
+![NMS_1](https://github.com/user-attachments/assets/09fd89b1-6e21-420b-8960-80e9d45cd1cd)
 
 
 If you are interested you can read more about the project here:
