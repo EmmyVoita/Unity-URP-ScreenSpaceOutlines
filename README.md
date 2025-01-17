@@ -1,28 +1,25 @@
 # ScreenSpaceOutlines
-This project is an enhancement of Robin Seibold's screen space outlines implementation, tailored to meet the specific requirements of a digital prototype.
+This project is an enhancement of Robin Seibold's screen space outlines implementation, which I expanded upon to meet the requirements of various projects I was working on. These enhancements included improving edge detection using non-maximum suppression and adding anti-aliasing. I initially worked on this project using Unity version 2022.3.50f1, but I encountered issues with setting multiple render targets, which I needed for implementing a Temporal Anti-Aliasing (TAA) shader. To diagnose bugs, I relied heavily on RenderDoc and eventually decided to switch to Unity 6.0 to use the Render Graph system.
 
-**References**
-- https://www.youtube.com/watch?v=LMqio9NsqmM&ab_channel=RobinSeibold
-- https://github.com/Robinseibold/Unity-URP-Outlines
-
-**Modifications:**
+The included zip file contains a Unity 60000.0.32f1 project that includes everything needed for the screen space outlines, including a sample scene and the "PC_Renderer" Universal Renderer Data with the screen space outlines effect applied.
 
 **Non-maximum supression (NSM) to resolve very steep (view-normal) angle transitions:**
 
-Here is an example of the artifact when there is no NSM. The slider is in the bottom left.
+NMS is applied as an optional step after calculating edge detection, which can be enabled or disabled using the "Use NMS" bool in the renderer feature settings.
 
-![image](https://github.com/EmmyVoita/Unity-URP-ScreenSpaceOutlines/assets/82542924/1e73f135-3122-498a-afeb-43824f298d85)
+Here is an example of the artifact when there is no NMS applied (left), and the issue resolved with NMS applied (right). My NMS implementation is not perfect. It can decrease the sharpness of outlines, which is also clear in the following image. I plan on reworking this at some point in the future when I have better knowledge of how to solve the problem. 
 
-Here is an example of the of just the NSM output. Circled in blue, artifacts occur do to the offset when dealing with fine details. 
+![NMS_1](https://github.com/user-attachments/assets/09fd89b1-6e21-420b-8960-80e9d45cd1cd)
 
-![image](https://github.com/EmmyVoita/Unity-URP-ScreenSpaceOutlines/assets/82542924/89dd48c3-e697-435d-8507-7bda0dc2b7e7)
+**Temporal Anti-Aliasing** 
 
-Since the target issue occurs when the view dot normal is specifically close to 0, the NSM output is blended with the base output based on the dot product and the slider variable to allow for more control. This approach reduces artifacts around fine details, such as those on the sword, although there is still room for improvement. These screenshots were taken with 2x MSAA.
+This project implements playdeadgames temporal reprojection solution in URP. It is an optional anti-aliasing pass after applying screen space outines that applies TAA to the entire image, since Unity's built-in anti-aliasing functions don't apply to the additional injected passes.
 
-![image](https://github.com/EmmyVoita/Unity-URP-ScreenSpaceOutlines/assets/82542924/dbbfaa97-869b-46f9-8f10-09774f83b3fa)
+If you are interested you can read more about the project here:
+[come back and insert link]
 
-**Rendering Outlines as a pre-pass to the Unity render opaque geometry pass:**
-
-Rendering the outline layer as a pre-pass allows other geometry to be easily rendered on top of outlines without requiring depth information. The outline layer is then excluded from the opaque geometry pass.
-
-![image](https://github.com/EmmyVoita/Unity-URP-ScreenSpaceOutlines/assets/82542924/279cb0cf-9f90-4920-a022-9886b0ac931f)
+**Links**
+- https://www.youtube.com/watch?v=LMqio9NsqmM&ab_channel=RobinSeibold
+- https://github.com/Robinseibold/Unity-URP-Outlines
+- https://gdcvault.com/play/1022970/Temporal-Reprojection-Anti-Aliasing-in
+- https://github.com/playdeadgames/temporal
