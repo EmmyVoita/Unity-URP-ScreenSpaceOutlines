@@ -7,7 +7,7 @@ The included zip file contains a Unity 60000.0.32f1 project that includes everyt
 
 NMS is applied as an optional step after calculating edge detection, which can be enabled or disabled using the "Use NMS" bool in the renderer feature settings.
 
-Here is an example of the artifact when there is no NMS applied (left), and the issue resolved with NMS applied (right). My NMS implementation is not perfect. It can decrease the sharpness of outlines, which is also clear in the following image. I plan on reworking this at some point in the future when I have better knowledge of how to solve the problem. I will also add support for multiple outline colors eventually.  
+Here is an example of the artifact when there is no NMS applied (left), and the issue resolved with NMS applied (right). My NMS implementation is not perfect. It can decrease the sharpness of outlines, which is also clear in the following image. I plan on reworking this at some point in the future when I have better knowledge of how to solve the problem. I will also add support for multiple different outline colors eventually.  
 
 ![NMS_1](https://github.com/user-attachments/assets/09fd89b1-6e21-420b-8960-80e9d45cd1cd)
 
