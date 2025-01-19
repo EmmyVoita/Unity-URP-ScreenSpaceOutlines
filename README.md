@@ -3,6 +3,11 @@ This project is an enhancement of Robin Seibold's screen space outlines implemen
 
 The included zip file contains a Unity 60000.0.32f1 project that includes everything needed for the screen space outlines, including a sample scene and the "PC_Renderer" Universal Renderer Data with the screen space outlines effect applied. The unity package "ScreenSpaceOutlines.unitypackage" is just everything except the URP settings asset. You can add "SSO Renderer Feature" to your Universal Renderer Data asset.
 
+**Example Scene:**
+
+![2025-01-1915-50-26-ezgif com-optimize](https://github.com/user-attachments/assets/596df888-3ee6-4d8a-b31a-f181cd75a60d)
+
+
 **Non-maximum supression (NSM) to resolve very steep (view-normal) angle transitions:**
 
 NMS is applied as an optional step after calculating edge detection, which can be enabled or disabled using the "Use NMS" bool in the renderer feature settings.
@@ -17,6 +22,7 @@ This project implements playdeadgames temporal reprojection solution in URP. It 
 
 If you are interested you can read more about the project here:
 [come back and insert link]
+
 
 
 **Links**
