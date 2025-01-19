@@ -1,11 +1,12 @@
 # ScreenSpaceOutlines
-This project is an enhancement of Robin Seibold's screen space outlines implementation, which I expanded upon to meet the requirements of various projects I was working on. These enhancements included improving edge detection using non-maximum suppression and adding anti-aliasing. I initially worked on this project using Unity version 2022.3.50f1, but I encountered issues with setting multiple render targets, which I needed for implementing a Temporal Anti-Aliasing (TAA) shader. To diagnose bugs, I relied heavily on RenderDoc and eventually decided to switch to Unity 6.0 to use the Render Graph system.
+This project is an enhancement of Robin Seibold's screen space outlines implementation, which I expanded upon to meet the requirements of various projects I was working on. These enhancements included improving edge detection using non-maximum suppression and adding anti-aliasing. I initially worked on this project using Unity version 2022.3.50f1, but I encountered issues with setting multiple render targets, which I needed for implementing a Temporal Anti-Aliasing (TAA) shader, and I eventually decided to switch to Unity 6.0 to use the Render Graph system.
 
 The included zip file contains a Unity 60000.0.32f1 project that includes everything needed for the screen space outlines, including a sample scene and the "PC_Renderer" Universal Renderer Data with the screen space outlines effect applied. The unity package "ScreenSpaceOutlines.unitypackage" is just everything except the URP settings asset. You can add "SSO Renderer Feature" to your Universal Renderer Data asset.
 
 **Example Scene:**
 
 ![2025-01-1915-50-26-ezgif com-optimize](https://github.com/user-attachments/assets/596df888-3ee6-4d8a-b31a-f181cd75a60d)
+![2025-01-1915-49-35-ezgif com-optimize](https://github.com/user-attachments/assets/dfb17cf5-c2c8-4ca3-b07f-2aae0f34afc7)
 
 
 **Non-maximum supression (NSM) to resolve very steep (view-normal) angle transitions:**
