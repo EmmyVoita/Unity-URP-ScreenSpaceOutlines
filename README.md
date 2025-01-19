@@ -1,7 +1,7 @@
 # ScreenSpaceOutlines
 This project is an enhancement of Robin Seibold's screen space outlines implementation, which I expanded upon to meet the requirements of various projects I was working on. These enhancements included improving edge detection using non-maximum suppression and adding anti-aliasing. I initially worked on this project using Unity version 2022.3.50f1, but I encountered issues with setting multiple render targets, which I needed for implementing a Temporal Anti-Aliasing (TAA) shader. To diagnose bugs, I relied heavily on RenderDoc and eventually decided to switch to Unity 6.0 to use the Render Graph system.
 
-The included zip file contains a Unity 60000.0.32f1 project that includes everything needed for the screen space outlines, including a sample scene and the "PC_Renderer" Universal Renderer Data with the screen space outlines effect applied.
+The included zip file contains a Unity 60000.0.32f1 project that includes everything needed for the screen space outlines, including a sample scene and the "PC_Renderer" Universal Renderer Data with the screen space outlines effect applied. The unity package is just everything except the URP settings asset. You can add "SSO Renderer Feature" to your Universal Renderer Data asset.
 
 **Non-maximum supression (NSM) to resolve very steep (view-normal) angle transitions:**
 
